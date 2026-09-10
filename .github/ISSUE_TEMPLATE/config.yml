@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/clearly-sh/clearly/security/advisories/new
+    about: Report privately — please don't open a public issue.
+  - name: MCP documentation
+    url: https://clearly.sh/docs/mcp
+    about: Connect strings per client, scopes, and the workspace/agent URL forms.
+  - name: Claude Code plugin
+    url: https://github.com/clearly-sh/clearly-plugin
+    about: Issues with the plugin and its skills belong on that repo.

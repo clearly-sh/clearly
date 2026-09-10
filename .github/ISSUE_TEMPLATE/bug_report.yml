@@ -1,0 +1,66 @@
+name: Bug report
+description: Something in the MCP server, the CLI, or the app is not working.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. **If this is a security issue, please don't file it here** —
+        use [private reporting](https://github.com/clearly-sh/clearly/security/advisories/new)
+        instead.
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where
+      options:
+        - MCP server (relay.clearly.sh/mcp)
+        - beehaven CLI
+        - Web app (clearly.sh)
+        - Mac app
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: client
+    attributes:
+      label: Client
+      description: For MCP issues — which client, and its version.
+      placeholder: Claude Code 2.4.1 / Cursor / VS Code / Codex
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: >
+        MCP — `serverInfo.version` from the `initialize` response (looks like `0.3.1+ab12cd34`).
+        CLI — the output of `beehaven --version`. This tells us exactly what you were talking to.
+      placeholder: 0.3.1+09751be1
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what happened, and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Output
+      description: >
+        Any error text. For CLI issues `beehaven status` is usually the single most useful thing.
+        This is rendered as code, so no need to add backticks.
+      render: shell
+
+  - type: checkboxes
+    id: scrubbed
+    attributes:
+      label: Before you post
+      options:
+        - label: >
+            I've checked this doesn't include a token, an API key, or anything from a workspace I
+            wouldn't want public. Issues here are visible to everyone.
+          required: true

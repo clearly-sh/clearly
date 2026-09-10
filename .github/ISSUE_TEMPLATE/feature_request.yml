@@ -1,0 +1,29 @@
+name: Feature request
+description: Something Clearly should be able to do and can't.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: >
+        The job, not the feature. What you were trying to get done, and where it stopped —
+        that tends to lead somewhere better than a described solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: How are you doing it today?
+      description: Including "I gave up" — that's useful signal.
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where would it live?
+      options:
+        - MCP server (a tool or verb)
+        - beehaven CLI
+        - Web app
+        - Not sure

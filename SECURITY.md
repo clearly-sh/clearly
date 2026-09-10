@@ -2,8 +2,10 @@
 
 ## Reporting a vulnerability
 
-Use GitHub's private reporting: **[Report a vulnerability](https://github.com/clearly-sh/clearly/security/advisories/new)**.
-It reaches us directly and stays private until we publish an advisory.
+Email **security@clearly.sh**, or use GitHub's private reporting —
+**[Report a vulnerability](https://github.com/clearly-sh/clearly/security/advisories/new)** — if
+you would rather have a tracked thread that becomes an advisory. Either reaches us; neither is
+public.
 
 Please do not open a public issue for a security report.
 

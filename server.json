@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "sh.clearly/clearly",
+  "title": "Clearly",
+  "description": "Find and manage Clearly workspace docs, canvases, sheets, decks, projects, boards, and tickets.",
+  "version": "1.1.0",
+  "websiteUrl": "https://clearly.sh/docs/mcp",
+  "repository": {
+    "url": "https://github.com/clearly-sh/clearly",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://relay.clearly.sh/mcp"
+    }
+  ]
+}

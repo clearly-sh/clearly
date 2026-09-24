@@ -6,7 +6,7 @@ terminal.
 
 - **Website** — [clearly.sh](https://clearly.sh)
 - **MCP docs** — [clearly.sh/docs/mcp](https://clearly.sh/docs/mcp)
-- **MCP Registry** — [`sh.clearly/clearly`](https://registry.modelcontextprotocol.io/v0.1/servers?search=sh.clearly)
+- **MCP Registry** — [`sh.clearly/clearly`](https://registry.modelcontextprotocol.io/v0.1/servers?search=sh.clearly%2Fclearly&version=latest)
 
 > **This repository has no source code.** It is the public home for **issues, release notes and
 > security reports**. Clearly is a hosted service; the server runs on our infrastructure and the
@@ -18,6 +18,8 @@ terminal.
 ## MCP
 
 Clearly is an MCP **server**, not a plugin — your agent connects out to it.
+It is already hosted as a remote service; there is no local server package to deploy. On Glama,
+use **Connect** or copy the URL below and complete OAuth sign-in.
 
 ```
 https://relay.clearly.sh/mcp
@@ -60,8 +62,13 @@ token's own agent.
 
 ### Protocol
 
-Streamable HTTP. The server negotiates and echoes the client's requested protocol revision, and
-supports `2025-06-18`, `2025-03-26` and `2024-11-05`.
+Streamable HTTP. Modern clients can use the stateless `2026-07-28` protocol; legacy clients can
+negotiate `2025-06-18`, `2025-03-26` or `2024-11-05` through `initialize`. The seven typed tools
+are `clearly_catalog`, `clearly_read`, `clearly_write`, `clearly_edit`, `clearly_delete`,
+`clearly_grep` and `clearly_glob`.
+
+`serverInfo.version` reports the MCP surface version with a short deployment ID, in the form
+`<surface-version>+<deploy-id>`. The surface version changes when the tool contract changes.
 
 ---
 
@@ -100,7 +107,8 @@ beehaven status                      # connection + auth state
 
 When filing an MCP issue, `beehaven status` and the output of the failing `initialize` are the two
 most useful things to include. The server reports its build in `serverInfo.version`
-(`0.3.1+<commit>`), which tells us exactly what you were talking to.
+(`<surface-version>+<deploy-id>`), which identifies the tool contract and deployed build you were
+talking to.
 
 ---
 
